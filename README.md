@@ -1,2 +1,22 @@
 # hippopotamus
-丸みを帯び、脚の短いずんぐりとした体つきがブタと相似をなすことから、同じ猪豚亜目 (Suiformes) に属するとされていた。
+
+> My superior Nuxt.js project
+
+## Build Setup
+
+``` bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn run dev
+
+# build for production and launch server
+$ yarn run build
+$ yarn start
+
+# generate static project
+$ yarn run generate
+```
+
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
