@@ -4,6 +4,7 @@
       <div class="text-xs-center">
         <logo />
         <vuetify-logo />
+        <man />
       </div>
     </v-flex>
   </v-layout>
@@ -12,11 +13,13 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import Man from '~/components/Man.vue'
 
 export default {
   components: {
     Logo,
-    VuetifyLogo
+    VuetifyLogo,
+    Man
   },
   mounted: function() {
     this.$nextTick(() => {
