@@ -11,11 +11,13 @@
           <v-btn round color="error" @click="clear">clear</v-btn>
         </v-card-actions>
         <div>
-          <ul>
-            <li v-for="(item, index) in contents" :key="index">
-              {{ item.id }} - {{ item.kami }} {{ item.simo }}
-            </li>
-          </ul>
+          <draggable v-model="contents">
+            <transition-group>
+              <div v-for="item in contents" :key="item.id">
+                {{ item.id }} - {{ item.kami }} {{ item.simo }}
+              </div>
+            </transition-group>
+          </draggable>
         </div>
       </v-card>
     </v-flex>
@@ -24,10 +26,22 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
+import draggable from 'vuedraggable'
 
 export default {
+  components: {
+    draggable
+  },
   computed: {
-    ...mapState(['counter', 'contents'])
+    ...mapState(['counter']),
+    contents: {
+      get() {
+        return this.$store.state.contents
+      },
+      set(value) {
+        this.$store.commit('updateContents', value)
+      }
+    }
   },
   methods: {
     greet: function(event) {
