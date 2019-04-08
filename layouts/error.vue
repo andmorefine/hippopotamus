@@ -8,7 +8,14 @@
 
 <script>
 export default {
-  props: ['error'],
+  props: {
+    error: {
+      type: Object,
+      default: function() {
+        return { statusCode: 200 }
+      }
+    }
+  },
   layout: 'blog' // エラーページ用のカスタムレイアウトを指定できます
 }
 </script>

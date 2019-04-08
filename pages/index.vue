@@ -17,6 +17,12 @@ export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  mounted: function() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
   }
 }
 </script>
